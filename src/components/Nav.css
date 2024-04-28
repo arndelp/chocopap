@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+  
+  }
+  
+
+
+/****************Polices*****************/
+
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.cdnfonts.com/css/droid-serif-2');
+
+
+/***************Couleurs******************/
+
+:root {
+    --blanc: #FFFFFF;
+    --Bleu: #55C0CF;
+    --Marron: #2C1E1E;
+    --Noir: #1F1615;
+    --Orange: #B65F28;
+    --Jaune: #FFD543;
+
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+    font-family: Fjalla One;
+    font-size: 1.5em;
+  }
+
+ .nbrArticle {
+    text-decoration: none;   
+    background-color: var(--Marron); 
+    color: var(--Jaune);
+    border-color: var(--Marron);
+    
+}
+.navbar__link.nbrArticle {
+    text-decoration: none;
+}
+
+.navBar {
+    background-color: var(--Marron);
+    display: flex;
+    flex-wrap: wrap; /*Pour ne pas dépasser sur les bords*/
+    align-items: center; 
+    justify-content: left;
+    padding-top: 0.7rem;  
+   
+}
+
+.navbar__links {    
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+
+.navbar__link {
+    color: var(--Jaune);
+    margin-left: 1rem;
+}  
+
+
+
+.logoSize {
+    width: 5em;
+    
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    
+ }
+
+.Burger-button {
+    width: 40px;
+    height: 40px;
+    background-color: var(--Marron);
+    border-color: var(--Marron);
+
+}
+.cartIcon {
+    width: 1.5em;
+    padding-left: 0.4em;
+    
+} 
+
+ 
