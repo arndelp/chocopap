@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import "./Carousel.css";
+import "../style/Carousel.css";
 import { Outlet, Link } from "react-router-dom";
 
 
@@ -16,7 +16,7 @@ export const Carousel = ( { data }) => {
             return <img src={item.src} alt={item.alt} key={idx} className={slide === idx ? "slide" : "slide slide-hidden"}    />
         })}
             <span className="indicators">
-                {data.map((_, idx) => {
+                {data.map((_item, idx) => {
                     return <button 
                         key={idx} 
                         onClick={() => setSlide(idx)} 

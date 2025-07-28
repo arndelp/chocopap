@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
+import "../src/style/App.css";
 import { Carousel } from "./components/Carousel";
 import Nav from "./components/Nav";
 import { slides } from "./data/carouselData.json";

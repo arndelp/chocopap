@@ -1,4 +1,4 @@
-import "./Boutique.css";
+import "../style/Boutique.css";
 
 export  function Boutique() {
     return (

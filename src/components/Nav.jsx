@@ -1,5 +1,5 @@
-import React from 'react';
-import "./Nav.css";
+
+import "../style/Nav.css";
 import {useState} from "react";
 
 
@@ -46,7 +46,7 @@ function Nav() {
                     
 
 
-                <div class={`row d-lg-none ${showLinks ? "d-block" : "d-none"} `}>   
+                <div className={`row d-lg-none ${showLinks ? "d-block" : "d-none"} `}>   
                     
                     <ul className="navbar__links d-block d-lg-none">                   
                         <li className="navbar__item">
