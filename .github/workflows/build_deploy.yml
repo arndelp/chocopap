@@ -1,0 +1,26 @@
+name: Deploy React App
+permissions:
+  contents: write
+on:
+  push:
+    branches:
+      - main
+jobs:   
+  deploy:  
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code
+        uses: actions/checkout@v4
+      - name: Install Node v18
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install
+        run: npm install        
+      - name: Build
+        run: npm run build
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: build 
+          branch: gh-pages
