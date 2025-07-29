@@ -17,7 +17,7 @@ export default function App() {
       <Route path="/chocopap/" element={
       <Carousel data={slides} /> }>
       </Route>
-      <Route path="/chocopap/boutique/" element={
+      <Route path="/chocopap/boutique" element={
       <Boutique /> }>
       </Route>
      
