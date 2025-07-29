@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "../src/style/App.css";
-import { Carousel } from "./components/Carousel";
+import "./style/App.css";
+import { Carousel } from "./components/Carousel.jsx";
 import Nav from "./components/Nav";
 import { slides } from "./data/carouselData.json";
 import ReactDOM from "react-dom/client";
-import { Boutique } from "./components/Boutique";
+import { Boutique } from "./components/Boutique.jsx";
 
 
 
@@ -14,10 +14,10 @@ export default function App() {
     <BrowserRouter>
     <Nav />
     <Routes>
-      <Route path="/" element={
+      <Route path="/chocopap/" element={
       <Carousel data={slides} /> }>
       </Route>
-      <Route path="/boutique" element={
+      <Route path="/chocopap/boutique/" element={
       <Boutique /> }>
       </Route>
      
@@ -28,5 +28,3 @@ export default function App() {
 }
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);

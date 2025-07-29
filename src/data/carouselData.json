@@ -2,15 +2,15 @@
     "slides": [
 
         {
-            "src": "../src/assets/accueil1.jpg",
+            "src": "./src/assets/accueil1.jpg",
             "alt": "image accueil1"
         },
         {
-            "src": "../src/assets/accueil2.jpg",
+            "src": "./src/assets/accueil2.jpg",
             "alt": "image accueil2"
         },
         {
-            "src": "../src/assets/accueil3.jpg",
+            "src": "./src/assets/accueil3.jpg",
             "alt": "image accueil3"
         }
 
