@@ -11,13 +11,13 @@ import { Boutique } from "./components/Boutique.jsx";
 export default function App() {
   return (
     
-    <BrowserRouter>
+    <BrowserRouter basename="/chocopap">
     <Nav />
     <Routes>
-      <Route path="/chocopap/" element={
+      <Route path="/" element={
       <Carousel data={slides} /> }>
       </Route>
-      <Route path="/chocopap/boutique" element={
+      <Route path="/boutique" element={
       <Boutique /> }>
       </Route>
      
