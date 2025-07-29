@@ -1,7 +1,7 @@
 
 import "../style/Nav.css";
 import {useState} from "react";
-import logo from "../assets/logo";
+import logo from "../assets/logo.png";
 
 
 
