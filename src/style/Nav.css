@@ -65,6 +65,7 @@ ul {
 .navbar__link {
     color: var(--Jaune);
     margin-left: 1rem;
+    margin-top: 1rem;
 }  
 
 
