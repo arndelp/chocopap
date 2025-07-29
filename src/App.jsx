@@ -2,9 +2,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./style/App.css";
 import { Carousel } from "./components/Carousel.jsx";
 import Nav from "./components/Nav";
-import { slides } from "./data/carouselData.json";
-import ReactDOM from "react-dom/client";
+import { slides } from "./data/carouselData.js";
 import { Boutique } from "./components/Boutique.jsx";
+
 
 
 

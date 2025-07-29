@@ -3,6 +3,8 @@ import "../style/Carousel.css";
 import { Outlet, Link } from "react-router-dom";
 
 
+
+
 export const Carousel = ( { data }) => {
     
     const [slide, setSlide] = useState(0);
