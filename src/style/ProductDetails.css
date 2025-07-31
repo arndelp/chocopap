@@ -1,0 +1,5 @@
+.Details {
+    background-color: var(--Marron);
+    display: grid;
+    justify-content: center;
+}

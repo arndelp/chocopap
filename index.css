@@ -28,14 +28,18 @@
 
 /* Footer */
 
+
+
+
 footer {
+    
     background-color: var(--Noir);
     color: var(--Jaune);
 }
 
 .margeColFooter {
     
-    margin:2em ;
+    padding: 3em ;
 }
 
 .textFooter {
@@ -70,7 +74,9 @@ h5 {
 
 
 
-
+h1 {
+    padding-left: 2em;
+}
 
 
 

@@ -2,5 +2,65 @@
     min-height: 100vh;
     background-color: var(--Marron);
     color: var(--Jaune);
+    display: flex;
+    
+    
 
 }
+
+.filterLabel {
+    margin: 0 1rem 0 1rem;
+}
+
+.filterLabelTitle {
+    margin: 0 1rem 0 1rem;
+    text-decoration: underline; 
+}
+
+.ico {
+    margin-top: 1rem;
+    max-width: 8rem;
+}
+
+.prix-filtres-top {
+    margin-top: 1rem;
+    max-width: 10rem;
+}
+
+.prix-filtres {
+    margin-top: 0.5rem;
+    max-width: 10rem;
+}
+
+.notes-filtres-top {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    max-width: 10rem;
+}
+
+.notes-filtres {
+    margin-top: 0.5rem;
+    max-width: 10rem;
+
+}
+
+.allFilters {
+    max-width: 12em;
+    max-height: 30em;
+    margin-left: 2em;
+    background-color: var(--Orange);
+    padding-bottom: 1em;
+    margin-top: 2em;
+    
+}
+
+.titleBoutique {
+    background-color: var(--Marron);
+    color: var(--Jaune);
+    margin-bottom: 0rem;
+}
+
+.ListProduct {
+    padding-top: 2rem;
+}
+

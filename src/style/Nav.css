@@ -52,6 +52,7 @@ ul {
     align-items: center; 
     justify-content: left;
     padding-top: 0.7rem;  
+    min-width: 100vw;
    
 }
 
@@ -91,4 +92,7 @@ ul {
     
 } 
 
- 
+.no-underline {
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,10 +1,11 @@
-[
+{
+  "items": [
   {
       "id": "1" ,
       "title": "Cerisier",
       "price": 2.99,
       "note" : 5,
-      "image": "./images/produit1.jpg",
+      "image": "/images/produit1.jpg",
       "category": {
           "blanc": false,
           "lait": true,
@@ -22,7 +23,7 @@
       "title": "Coulis Caramel",
       "price": 13.99,
       "note" : 3,
-      "image": "./images/produit2.jpg",
+      "image": "/images/produit2.jpg",
       "category": {
           "blanc": false,
           "lait": true,
@@ -40,7 +41,7 @@
       "title": "Douceur exotique",
       "price": 4.99,
       "note" : 4,
-      "image": "./images/produit3.jpg",
+      "image": "/images/produit3.jpg",
       "category": {
           "blanc": false,
           "lait": true,
@@ -58,7 +59,7 @@
       "title": "Blanc Passion",
       "price": 5.99,
       "note" : 5,
-      "image": "./images/produit4.jpg",
+      "image": "/images/produit4.jpg",
       "category": {
           "blanc": true,
           "lait": false,
@@ -76,7 +77,7 @@
       "title": "Douceur croquante",
       "price": 2.99,
       "note" : 3,
-      "image": "./images/produit5.jpg",
+      "image": "/images/produit5.jpg",
       "category": {
           "blanc": false,
           "lait": true,
@@ -94,7 +95,7 @@
       "title": "Le Zèbre",
       "price": 19.99,
       "note" : 4,
-      "image": "./images/produit6.jpg",
+      "image": "/images/produit6.jpg",
       "category": {
           "blanc": true,
           "lait": true,
@@ -112,7 +113,7 @@
       "title": "Coulis Fraise",
       "price": 9.99,
       "note" : 4,
-      "image": "./images/produit7.jpg",
+      "image": "/images/produit7.jpg",
       "category": {
           "blanc": false,
           "lait": true,
@@ -130,7 +131,7 @@
       "title": "Noir Passion",
       "price": 4.99,
       "note" : 5,
-      "image": "./images/produit8.jpg",
+      "image": "/images/produit8.jpg",
       "category": {
           "blanc": false,
           "lait": false,
@@ -148,7 +149,7 @@
       "title": "Fantaisie",
       "price": 2.99,
       "note" : 5,
-      "image": "./images/produit9.jpg",
+      "image": "/images/produit9.jpg",
       "category": {
           "blanc": false,
           "lait": true,
@@ -166,7 +167,7 @@
       "title": "Caramel Salé",
       "price": 14.99,
       "note" : 4,
-      "image": "./images/produit10.jpg",
+      "image": "/images/produit10.jpg",
       "category": {
           "blanc": false,
           "lait": false,
@@ -179,4 +180,5 @@
         "description": "Caramel Salé - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "ingredients": "Caramel au beurre salé avec un coeur en poudre chocolatée. Allergènes : SOJA, LAIT (LACTOSE). Contient de l'anhydride sulfureux"
     }
-]
+  ]
+}
