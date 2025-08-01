@@ -18,10 +18,10 @@ export default function App() {
       <HashRouter >
         <Nav />
         <Routes>
-          <Route path="/"  element={  <Carousel data={slides} /> }>   </Route>
-          <Route path="/boutique" element={  <Boutique /> }>   </Route>
-          <Route path="/boutique/ProductDetails" element={<ProductDetails /> } > </Route>  
-          <Route path="/panier" element={<Cart />} >  </Route>  
+          <Route path="/chocopap/"  element={  <Carousel data={slides} /> }>   </Route>
+          <Route path="/chocopap/boutique" element={  <Boutique /> }>   </Route>
+          <Route path="/chocopap/boutique/ProductDetails" element={<ProductDetails /> } > </Route>  
+          <Route path="/chocopap/panier" element={<Cart />} >  </Route>  
         </Routes>   
       </HashRouter>
     </CartProvider>
