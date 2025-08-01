@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import "./style/App.css";
 import { Carousel } from "./components/Carousel.jsx";
 import Nav from "./components/Nav";
@@ -15,7 +15,7 @@ import { CartProvider } from "../context/CartContext.jsx";
 export default function App() {
   return (
     <CartProvider>
-      <BrowserRouter >
+      <HashRouter >
         <Nav />
         <Routes>
 
@@ -25,7 +25,7 @@ export default function App() {
           <Route path="/chocopap/panier" element={<Cart />} >  </Route>  
 
         </Routes>   
-      </BrowserRouter>
+      </HashRouter>
     </CartProvider>
   );
 }
