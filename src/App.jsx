@@ -1,4 +1,4 @@
-import {BrowserRouter , Routes, Route, BrowserRouter } from "react-router-dom";
+import {BrowserRouter , Routes, Route} from "react-router-dom";
 import "./style/App.css";
 import { Carousel } from "./components/Carousel.jsx";
 import Nav from "./components/Nav";
