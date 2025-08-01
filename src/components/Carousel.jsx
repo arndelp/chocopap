@@ -30,13 +30,13 @@ export const Carousel = ( { data }) => {
             <p className="slogan d-none d-lg-block">CHOCO PAP</p>
             <p className="sloganM d-block d-lg-none">CHOCO PAP</p>
         <div className="buttonPosition d-none d-lg-block">
-            <Link to="/chocopap/boutique">
+            <Link to="/boutique">
                 <button type="button" className=" btn-secondary btn-lg indexShopButton">VOIR LA BOUTIQUE</button>
             </Link> 
         </div>
    
         <div className="buttonPositionM d-block d-lg-none">
-            <Link to="/chocopap/boutique">
+            <Link to="/boutique">
                 <button type="button" className=" btn-secondary btn-lg indexShopButtonM">VOIR LA BOUTIQUE</button>
             </Link> 
             <Outlet />

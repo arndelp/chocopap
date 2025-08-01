@@ -104,7 +104,7 @@ export  function ProductDetails () {
               </Card.Body>
 
        {/* Bouton Retour */}
-              <Link to='/chocopap/boutique'>
+              <Link to='/boutique'>
                 <p color="blue" className="boutonRetourDetail">Retour</p>
               </Link>
             </Card.Body>
