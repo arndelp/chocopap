@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {HashRouter , Routes, Route } from "react-router-dom";
 import "./style/App.css";
 import { Carousel } from "./components/Carousel.jsx";
 import Nav from "./components/Nav";
@@ -15,7 +15,7 @@ import { CartProvider } from "../context/CartContext.jsx";
 export default function App() {
   return (
     <CartProvider>
-      <BrowserRouter >
+      <HashRouter >
         <Nav />
         <Routes>
           <Route path="/"  element={  <Carousel data={slides} /> }>   </Route>
@@ -23,7 +23,7 @@ export default function App() {
           <Route path="/boutique/ProductDetails" element={<ProductDetails /> } > </Route>  
           <Route path="/panier" element={<Cart />} >  </Route>  
         </Routes>   
-      </BrowserRouter>
+      </HashRouter>
     </CartProvider>
   );
 }

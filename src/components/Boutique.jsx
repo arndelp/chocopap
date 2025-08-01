@@ -33,7 +33,7 @@ export function Boutique() {
 
   // Récupération des données JSON au montage du composant
   useEffect(() => {
-    fetch('/products.json')
+    fetch('/public/products.json')
       .then(response => response.json())
       .then(data =>  setItems(data.items))
       .catch(error => console.error("Erreur de chargement :", error));
