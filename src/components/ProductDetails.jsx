@@ -62,9 +62,9 @@ export  function ProductDetails () {
     <>
       <div className="Details">     
         <div className= "kard pt-4 pb-4">              
-          <Card style={{ width: '90vh' }}>
+          <Card style={{ width: '70vw' }}>
             <div className="container">
-              <Card.Img variant="top" src={`${image}`} className="imageDetails mt-2" />
+              <Card.Img variant="top" src={`${image}`} alt={title} className="imageDetails mt-2" />
             </div>
             <Card.Body>
               <Card.Title className="fs-1 lh-sm link-danger" >{title}</Card.Title>
