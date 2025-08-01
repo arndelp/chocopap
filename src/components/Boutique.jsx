@@ -60,7 +60,7 @@ export function Boutique() {
     return (
       <Card style={{ width: '18rem', margin: '1rem' }}>
         <Link className="no-underline" to='/chocopap/boutique/ProductDetails' state={product}>
-          <Card.Img variant="top" src={`${image}`} alt={title} />
+          <Card.Img variant="top" src={`/${image}`} alt={title} />
           <Card.Body>
             <Card.Title>{title}</Card.Title>
           </Card.Body>
