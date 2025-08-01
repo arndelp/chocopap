@@ -56,59 +56,57 @@ export  function ProductDetails () {
     alert(`${quantity} ${product.title} ajouté(s) au panier`);
   };
 
+  //URL de l'image
+ const baseUrl = '/chocopap';
+ const imagePath = `${baseUrl}/${image}`;
 
-
+console.log("Chemin image :", image);
   return (
     <>
       <div className="Details">     
         <div className= "kard pt-4 pb-4">              
-          <Card style={{ width: '70vw' }}>
-            <div className="container">
-              <Card.Img variant="top" src={`${image}`} alt={title} className="imageDetails mt-2" />
-            </div>
-            <Card.Body>
-              <Card.Title className="fs-1 lh-sm link-danger" >{title}</Card.Title>
-              <Card.Text className="fs-3 lh-sm">
-                {price} €
-              </Card.Text>
-              <Card.Text className="fs-3 lh-sm">
-                {description}
-              </Card.Text>
-              <h3>Ingredients:</h3>
-              <Card.Text className="fs-3 lh-sm">
-                {ingredients}
-              </Card.Text>
+          <Card style={{ display: 'flex', flexDirection: 'row', maxWidth: '100vw', margin: 'auto' }}>
+  {/* Image à gauche */}
+  <div style={{ width: '500px', height: 'auto' }}>
+    <img
+      src={imagePath}
+      alt={title}
+      style={{ width: '20vw', height: 'auto', objectFit: 'cover' }}
+    />
+  </div>
 
-               {/* Section pour ajuster la quantité */}
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-                <button onClick={decreaseQuantity} style={{ fontSize: '18px', width: '30px', height: '30px' }}>-</button>
-                <input
-                  type="number"
-                  value={quantity}
-                  min="1"
-                  onChange={handleQuantityChange}
-                  style={{ width: '50px', margin: '0 10px', textAlign: 'center' }}
-                />
-                <button onClick={increaseQuantity} style={{ fontSize: '18px', width: '30px', height: '30px' }}>+</button>
-              </div>
-              
-              {/* Ajouter au panier */}
-              <Card.Body>
-                <Card.Link href="#" onClick={(e) => {
-                  e.preventDefault();
-                  addToCart(product, quantity);
-                }}>
-                  <Button variant="outline-dark">Ajouter {quantity} article(s) au panier</Button>
-                  
-                </Card.Link>
-              </Card.Body>
+  {/* Détails à droite */}
+  <div className="d-flex flex-column flex-grow-1 p-3">
+    <Card.Body>
+      <Card.Title className="fs-1 lh-sm link-danger">{title}</Card.Title>
+      <Card.Text className="fs-3 lh-sm">{price} €</Card.Text>
+      <Card.Text className="fs-4 lh-sm">{description}</Card.Text>
 
-       {/* Bouton Retour */}
-              <Link to='/chocopap/boutique'>
-                <p color="blue" className="boutonRetourDetail">Retour</p>
-              </Link>
-            </Card.Body>
-          </Card>          
+      <h3>Ingrédients:</h3>
+      <Card.Text className="fs-4 lh-sm">{ingredients}</Card.Text>
+
+      <div className="my-3 d-flex align-items-center">
+        <button onClick={decreaseQuantity} style={{ fontSize: '18px', width: '30px', height: '30px' }}>-</button>
+        <input
+          type="number"
+          value={quantity}
+          min="1"
+          onChange={handleQuantityChange}
+          style={{ width: '50px', margin: '0 10px', textAlign: 'center' }}
+        />
+        <button onClick={increaseQuantity} style={{ fontSize: '18px', width: '30px', height: '30px' }}>+</button>
+      </div>
+
+      <Button variant="outline-dark" onClick={() => addToCart(product, quantity)}>
+        Ajouter {quantity} article(s) au panier
+      </Button>
+
+      <div className="mt-4">
+        <Link to="/chocopap/boutique" className="btn btn-link">← Retour à la boutique</Link>
+      </div>
+    </Card.Body>
+  </div>
+</Card>         
         </div>      
       </div>    
     </>
