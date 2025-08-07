@@ -4,7 +4,8 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import "../style/Cart.css"
 
-export function Cart() {
+export function Cart({isOpen, onClose}) {
+
   const { cart, setCart } = useContext(CartContext);
 
   // Met à jour le panier dans le context + localStorage
@@ -39,40 +40,77 @@ export function Cart() {
   // Total général
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-  return (
-    <div className="Cart">
-      <h1>Votre Panier</h1>
-      {cart.length === 0 ? (
-        <p>Le panier est vide.</p>
-      ) : (
-        <>
-          {cart.map(item => (
-            <Card key={item.id} style={{ margin: '1rem' }}>
-              <Card.Body style={{ display: 'flex', alignItems: 'center' }}>
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  style={{ width: "100px", marginRight: "1rem" }}
-                />
-                <div style={{ flexGrow: 1 }}>
-                  <Card.Title>{item.title}</Card.Title>
-                  <Card.Text>Prix unitaire : {item.price}€</Card.Text>
-                  <Card.Text>Quantité : {item.quantity}</Card.Text>
-                  <Card.Text>
-                    Total : {(item.price * item.quantity).toFixed(2)}€
-                  </Card.Text>
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <Button variant="success" onClick={() => increaseQty(item.id)}>+</Button>
-                  <Button variant="warning" onClick={() => decreaseQty(item.id)}>-</Button>
-                  <Button variant="danger" onClick={() => removeItem(item.id)}>Supprimer</Button>
-                </div>
-              </Card.Body>
-            </Card>
-          ))}
-          <h3 style={{ marginTop: "2rem" , marginLeft: "2rem" }}>Total à payer : {total.toFixed(2)}€</h3>
-        </>
-      )}
-    </div>
+  
+
+ return (
+    <>
+      {isOpen && <div className="overlay" onClick={onClose} />}  {/*overlay pour assombrir la page dérière*/}
+
+      <div className={`drawer ${isOpen ? "open" : ""}`}>
+        <div className="drawer-header">
+          <h1>Votre Panier</h1>
+          <button onClick={onClose} className="close-btn">
+            &times;
+          </button>
+        </div>
+
+        <div className="drawer-content">
+          {cart.length === 0 ? (
+            <p>Le panier est vide.</p>
+          ) : (
+            <>
+              {cart.map(item => (
+                <Card key={item.id} style={{ margin: "1rem" }}>
+                  <Card.Body style={{ display: "flex", alignItems: "center" }}>
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      style={{ width: "140px", marginRight: "1rem" }}
+                    />
+                    <div style={{ flexGrow: 1 }}>
+                      <Card.Title>{item.title}</Card.Title>
+                      <Card.Text>Prix unitaire : {item.price}€</Card.Text>
+                      <Card.Text>Quantité : {item.quantity}</Card.Text>
+                      <Card.Text>
+                        Total : {(item.price * item.quantity).toFixed(2)}€
+                      </Card.Text>
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "0.5rem",
+                      }}
+                    >
+                      <Button
+                        variant="success"
+                        onClick={() => increaseQty(item.id)}
+                      >
+                        +
+                      </Button>
+                      <Button
+                        variant="warning"
+                        onClick={() => decreaseQty(item.id)}
+                      >
+                        -
+                      </Button>
+                      <Button
+                        variant="danger"
+                        onClick={() => removeItem(item.id)}
+                      >
+                        Supprimer
+                      </Button>
+                    </div>
+                  </Card.Body>
+                </Card>
+              ))}
+              <h3 style={{ marginTop: "2rem", marginLeft: "2rem" }}>
+                Total à payer : {total.toFixed(2)}€
+              </h3>
+            </>
+          )}
+        </div>
+      </div>
+    </>
   );
 }

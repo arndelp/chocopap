@@ -3,3 +3,71 @@
     background-color: var(--Marron);
     color: var(--Jaune);
 }
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: auto;
+  width: 50vw;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1001;
+}
+
+.drawer.open {
+  transform: translateX(0);
+}
+
+/* VERSION MOBILE */
+@media (max-width: 900px) {
+  .drawer {
+    width: 100vw;            /* prend toute la largeur */
+    left: 0;                 /* étendu sur tout l’écran */
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  .drawer.open {
+    transform: translateX(0);
+  }
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.drawer-content {
+    max-height: calc(100vh - 80px); /* Ajuste selon la hauteur de l'en-tête */
+    overflow-y: auto;   /*autorise le scroll vertical*/
+    padding: 1rem;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.open-cart-btn {
+  padding: 10px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}

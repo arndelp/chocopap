@@ -2,14 +2,13 @@
     min-height: 100vh;
     background-color: var(--Marron);
     color: var(--Jaune);
-    display: flex;
-    
-    
+    display: flex;       
 
 }
 
 .filterLabel {
     margin: 0 1rem 0 1rem;
+    
 }
 
 .filterLabelTitle {
@@ -19,7 +18,8 @@
 
 .ico {
     margin-top: 1rem;
-    max-width: 8rem;
+    max-width: 8rem; 
+    
 }
 
 .prix-filtres-top {
@@ -50,17 +50,53 @@
     margin-left: 2em;
     background-color: var(--Orange);
     padding-bottom: 1em;
-    margin-top: 2em;
+    margin-top: 2em;   
     
+}
+
+.allCard {
+    display: flex;
+    background-color: aqua;
 }
 
 .titleBoutique {
     background-color: var(--Marron);
     color: var(--Jaune);
-    margin-bottom: 0rem;
+    padding-bottom: 2rem;
 }
 
 .ListProduct {
     padding-top: 2rem;
+    display: flex;
+    
+    
 }
 
+
+.icoM {
+    margin-top: 1em;
+}
+
+.filterLabelM {
+    justify-content: center;
+    margin: 0 1rem 0 1rem;
+    color: var(--Jaune);
+}
+
+.filterPrixLabelM {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.selectM {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+}
+
+.boutiqueM {
+    background-color: var(--Marron);
+}
+
+.content {
+    display: flex;
+}

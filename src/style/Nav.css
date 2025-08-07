@@ -96,3 +96,7 @@ ul {
     text-decoration: none;
     color: inherit;
 }
+
+.cart-button {
+    margin-bottom: 0.7em;
+}

@@ -31,6 +31,23 @@ export function Boutique() {
   const [minNote, setMinNote] = useState('');
   const [maxNote, setMaxNote] = useState('');
 
+  //Affichage des filtres version mobile
+  const [showFilterCatM, setShowFilterCatM] = useState(false);
+  const [showFilterPriceM, setShowFilterPriceM] = useState(false);
+  const [showFilterNoteM, setShowFilterNoteM] = useState(false);
+  // Fonctions pour affichage des filtres M
+  const handleShowLinksCatM = () => {
+    setShowFilterCatM(!showFilterCatM)
+  }
+  
+  const handleShowLinksPriceM = () => {
+    setShowFilterPriceM(!showFilterPriceM)
+  }
+  const handleShowLinksNoteM = () => {
+    setShowFilterNoteM(!showFilterNoteM)
+  }
+
+
   // Récupération des données JSON au montage du composant
   useEffect(() => {
     fetch('/chocopap/products.json')
@@ -127,86 +144,172 @@ export function Boutique() {
 
   return (
     <>
-    
 
       {/* Titre et liste des produits */}
-     
+         
+      <div className="Boutique d-none d-lg-block">
+        <div className="content row">
         <h1 className="titleBoutique">Boutique</h1>
+      {/**Zone des filtres Version desktop */}
       
-      <div className="Boutique">
+        <div className="allFilters ">
       
-        <div className="allFilters col-2 ">
-      {/* Zone des filtres */}
-        <div className='ico'>
-          <label className="filterLabelTitle">Catégories:</label>
-          {/* Chaque case désactive "Tous" lorsqu'elle est cochée , "Tous" désactive les autres lorsqu'elle est cochée */}
-          <label className="filterLabel"><input type="checkbox" checked={tousChecked} onChange={() => {setTousChecked(!tousChecked); setBlancChecked(false); setCaramelChecked(false); setFruitChecked(false);setLaitChecked(false); setLiqueurChecked(false); setNoirChecked(false); setNoixChecked(false); }} /> Tous</label>
-          <label className="filterLabel"><input type="checkbox" checked={blancChecked} onChange={() => { setBlancChecked(!blancChecked); setTousChecked(false); }} /> Blanc </label>
-          <label className="filterLabel"><input type="checkbox" checked={caramelChecked} onChange={() => { setCaramelChecked(!caramelChecked); setTousChecked(false); }} /> Caramel</label>
-          <label className="filterLabel"><input type="checkbox" checked={fruitChecked} onChange={() => { setFruitChecked(!fruitChecked); setTousChecked(false); }} /> Fruit</label>
-          <label className="filterLabel"><input type="checkbox" checked={laitChecked} onChange={() => { setLaitChecked(!laitChecked); setTousChecked(false); }} /> Lait</label>
-          <label className="filterLabel"><input type="checkbox" checked={liqueurChecked} onChange={() => { setLiqueurChecked(!liqueurChecked); setTousChecked(false); }} /> Liqueur</label>
-          <label className="filterLabel"><input type="checkbox" checked={noirChecked} onChange={() => { setNoirChecked(!noirChecked); setTousChecked(false); }} /> Noir</label>
-          <label className="filterLabel"><input type="checkbox" checked={noixChecked} onChange={() => { setNoixChecked(!noixChecked); setTousChecked(false); }} /> Noix</label>
-        </div>
+          <div className='ico'>
+            <label className="filterLabelTitle">Catégories:</label>
+            {/* Chaque case désactive "Tous" lorsqu'elle est cochée , "Tous" désactive les autres lorsqu'elle est cochée */}
+            <label className="filterLabel"><input type="checkbox" checked={tousChecked} onChange={() => {setTousChecked(!tousChecked); setBlancChecked(false); setCaramelChecked(false); setFruitChecked(false);setLaitChecked(false); setLiqueurChecked(false); setNoirChecked(false); setNoixChecked(false); }} /> Tous</label>
+            <label className="filterLabel"><input type="checkbox" checked={blancChecked} onChange={() => { setBlancChecked(!blancChecked); setTousChecked(false); }} /> Blanc </label>
+            <label className="filterLabel"><input type="checkbox" checked={caramelChecked} onChange={() => { setCaramelChecked(!caramelChecked); setTousChecked(false); }} /> Caramel</label>
+            <label className="filterLabel"><input type="checkbox" checked={fruitChecked} onChange={() => { setFruitChecked(!fruitChecked); setTousChecked(false); }} /> Fruit</label>
+            <label className="filterLabel"><input type="checkbox" checked={laitChecked} onChange={() => { setLaitChecked(!laitChecked); setTousChecked(false); }} /> Lait</label>
+            <label className="filterLabel"><input type="checkbox" checked={liqueurChecked} onChange={() => { setLiqueurChecked(!liqueurChecked); setTousChecked(false); }} /> Liqueur</label>
+            <label className="filterLabel"><input type="checkbox" checked={noirChecked} onChange={() => { setNoirChecked(!noirChecked); setTousChecked(false); }} /> Noir</label>
+            <label className="filterLabel"><input type="checkbox" checked={noixChecked} onChange={() => { setNoixChecked(!noixChecked); setTousChecked(false); }} /> Noix</label>
+          </div>
 
         {/* Menus déroulants  pour les filtres de Prix*/}
-        <div className="prix-filtres-top " >
-          <label className="filterLabelTitle">Prix:</label>
-          <label className="filterLabel ">
-            Prix min : 
-            <select value={minPrice} onChange={(e) => setMinPrice(e.target.value)} style={{ marginLeft: '0.5rem' }}>
-              <option value="">--</option>
-              <option value="5">5€</option>
-              <option value="10">10€</option>
-              <option value="15">15€</option>
-              <option value="20">20€</option>
-            </select>
-          </label>
+          <div className="prix-filtres-top " >
+            <label className="filterLabelTitle">Prix:</label>
+            <label className="filterLabel ">
+              Prix min : 
+              <select value={minPrice} onChange={(e) => setMinPrice(e.target.value)} style={{ marginLeft: '0.5rem' }}>
+                <option value="">--</option>
+                <option value="5">5€</option>
+                <option value="10">10€</option>
+                <option value="15">15€</option>
+                <option value="20">20€</option>
+              </select>
+            </label>
 
-          <label className="filterLabel prix-filtres">
-          Prix max : 
-            <select value={maxPrice} onChange={(e) => setMaxPrice(e.target.value)} style={{ marginLeft: '0.5rem' }}>
-              <option value="">--</option>
-              <option value="10">10€</option>
-              <option value="15">15€</option>
-              <option value="20">20€</option>
-              <option value="25">25€</option>
-            </select>
-          </label>
-        </div>
+            <label className="filterLabel prix-filtres">
+            Prix max : 
+              <select value={maxPrice} onChange={(e) => setMaxPrice(e.target.value)} style={{ marginLeft: '0.5rem' }}>
+                <option value="">--</option>
+                <option value="10">10€</option>
+                <option value="15">15€</option>
+                <option value="20">20€</option>
+                <option value="25">25€</option>
+              </select>
+            </label>
+          </div>
 
         {/* Menus déroulants  pour les filtres de note*/}
-        <div className="notes-filtres-top" >
-          <label className="filterLabelTitle">Note:</label>
-          <label className="filterLabel notes-filtres">
-            Note min : 
-            <select value={minNote} onChange={(e) => setMinNote(e.target.value)} style={{ marginLeft: '0.5rem' }}>
-              <option value="">--</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </label>
+          <div className="notes-filtres-top" >
+            <label className="filterLabelTitle">Note:</label>
+            <label className="filterLabel notes-filtres">
+              Note min : 
+              <select value={minNote} onChange={(e) => setMinNote(e.target.value)} style={{ marginLeft: '0.5rem' }}>
+                <option value="">--</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </label>
 
-          <label className="filterLabel notes-filtres">
-          Note max : 
-            <select value={maxNote} onChange={(e) => setMaxNote(e.target.value)} style={{ marginLeft: '0.5rem' }}>
-              <option value="">--</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </label>
+            <label className="filterLabel notes-filtres">
+            Note max : 
+              <select value={maxNote} onChange={(e) => setMaxNote(e.target.value)} style={{ marginLeft: '0.5rem' }}>
+                <option value="">--</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </label>
+          </div>           
+          </div>
+           <div className="col-10 ListProduct ">
+          <ListProducts />
+          </div>
+        
+     </div>
+      </div>
+
+
+ {/**Zone des filtres Version Mobile */}
+      <div className="d-lg-none d-block boutiqueM">
+        <h1 className="titleBoutique">Boutique</h1>
+        <div className=" col-12 d-block d-lg-none">      
+          <div className='col-12'>
+            <button className=" filterPrixLabelM" onClick={handleShowLinksCatM}>{showFilterCatM ? "Catégories-" : "Catégories+"}</button>
+            <div className={`${showFilterCatM ? "d-block" : "d-none"}`}>
+            {/* Chaque case désactive "Tous" lorsqu'elle est cochée , "Tous" désactive les autres lorsqu'elle est cochée */}
+              <label className="filterLabelM col-12"><input type="checkbox" checked={tousChecked} onChange={() => {setTousChecked(!tousChecked); setBlancChecked(false); setCaramelChecked(false); setFruitChecked(false);setLaitChecked(false); setLiqueurChecked(false); setNoirChecked(false); setNoixChecked(false); }} /> Tous</label>
+              <label className="filterLabelM col-12"><input type="checkbox" checked={blancChecked} onChange={() => { setBlancChecked(!blancChecked); setTousChecked(false); }} /> Blanc </label>
+              <label className="filterLabelM col-12"><input type="checkbox" checked={caramelChecked} onChange={() => { setCaramelChecked(!caramelChecked); setTousChecked(false); }} /> Caramel</label>
+              <label className="filterLabelM col-12"><input type="checkbox" checked={fruitChecked} onChange={() => { setFruitChecked(!fruitChecked); setTousChecked(false); }} /> Fruit</label>
+              <label className="filterLabelM col-12"><input type="checkbox" checked={laitChecked} onChange={() => { setLaitChecked(!laitChecked); setTousChecked(false); }} /> Lait</label>
+              <label className="filterLabelM col-12"><input type="checkbox" checked={liqueurChecked} onChange={() => { setLiqueurChecked(!liqueurChecked); setTousChecked(false); }} /> Liqueur</label>
+              <label className="filterLabelM col-12"><input type="checkbox" checked={noirChecked} onChange={() => { setNoirChecked(!noirChecked); setTousChecked(false); }} /> Noir</label>
+              <label className="filterLabelM col-12"><input type="checkbox" checked={noixChecked} onChange={() => { setNoixChecked(!noixChecked); setTousChecked(false); }} /> Noix</label>
+            </div>
+          </div>
+
+        {/* Menus déroulants  pour les filtres de Prix*/}
+          <div className="icoM">
+            <button className="filterPrixLabelM" onClick={handleShowLinksPriceM}>{showFilterPriceM ? "Prix-" : "Prix+"}</button>
+            <div className={`${showFilterPriceM ? "d-block" : "d-none"}`}>
+              <label className="filterLabelM col-12  ">
+                Prix min : 
+                <select value={minPrice} onChange={(e) => setMinPrice(e.target.value)} className="selectM">
+                  <option value="">--</option>
+                  <option value="5">5€</option>
+                  <option value="10">10€</option>
+                  <option value="15">15€</option>
+                  <option value="20">20€</option>
+                </select>
+              </label>
+            
+              <label className="filterLabelM col-12">
+              Prix max : 
+                <select value={maxPrice} onChange={(e) => setMaxPrice(e.target.value)} className="selectM">
+                  <option value="">--</option>
+                  <option value="10">10€</option>
+                  <option value="15">15€</option>
+                  <option value="20">20€</option>
+                  <option value="25">25€</option>
+                </select>
+              </label>
+            </div>
+
+          </div>
+
+        {/* Menus déroulants  pour les filtres de note*/}
+          <div className="notes-filtres-top" >
+            <button className="filterLabelTitle" onClick={handleShowLinksNoteM} >{showFilterNoteM ? "Note-" : "Note+"}</button>
+            <div className={`${showFilterNoteM ? "d-block" : "d-none"}`}>
+              <label className="filterLabelM notes-filtres">
+                Note min : 
+                <select value={minNote} onChange={(e) => setMinNote(e.target.value)} style={{ marginLeft: '0.5rem' }}>
+                  <option value="">--</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </label>
+
+              <label className="filterLabelM notes-filtres">
+              Note max : 
+                <select value={maxNote} onChange={(e) => setMaxNote(e.target.value)} style={{ marginLeft: '0.5rem' }}>
+                  <option value="">--</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </label>
+            </div>
+          </div>
+      </div>
+        <div className="col-12">
+          <ListProducts />
         </div>
-      </div>
-      <div className="col-10 ListProduct">
-        <ListProducts />
-      </div>
       </div>
     </>
   );
