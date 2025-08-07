@@ -65,7 +65,7 @@ export function Cart({isOpen, onClose}) {
                     <img
                       src={item.image}
                       alt={item.title}
-                      style={{ width: "140px", marginRight: "1rem" }}
+                      style={{ width: "10rem", marginRight: "1rem" }}
                     />
                     <div style={{ flexGrow: 1 }}>
                       <Card.Title>{item.title}</Card.Title>
